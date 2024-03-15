@@ -1,0 +1,16 @@
+{
+    "purpose": "login time",
+    "deviceDetails": {
+        "mobileNumber": "7068773256",
+        "geoCode": "37.7749,-122.4194",
+        "location": "San Francisco, CA, USA",
+        "ip": "192.168.1.1",
+        "type": "mobile",
+        "deviceId": "ABC123",
+        "os": "Android",
+        "appId": "com.example.app",
+        "appName": "MyApp",
+        "appVersion": "2",
+        "gcmId": "gcm-123456789"
+    }
+}
