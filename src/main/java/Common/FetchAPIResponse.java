@@ -27,8 +27,8 @@ public class FetchAPIResponse {
 
 
     public Response addCardMethod(String cardNO) throws IOException, ParseException {
-        Reader reader=new FileReader(cnt.ADDCARD_REQUESTBODY);
-        prop.load(Files.newInputStream(Paths.get("/Users/Jayabrata/IdeaProjects/Axis_Bank_Api_Frmwrk/src/main/resources/API_URL.properties")));
+        Reader reader=new FileReader(System.getProperty("user.dir")+cnt.ADDCARD_REQUESTBODY);
+        prop.load(Files.newInputStream(Paths.get(System.getProperty("user.dir")+"/src/main/resources/API_URL.properties")));
         JSONObject jsonObject=(JSONObject)parser.parse(reader);
         RestAssured.baseURI=prop.getProperty("addCardUrl")+cardNO;
         RequestSpecification requestSpecification=RestAssured.given().accept(ContentType.JSON).contentType(ContentType.JSON);
@@ -38,8 +38,9 @@ public class FetchAPIResponse {
     }
 
     public Response getOTPMethod(String mobileNO) throws IOException, ParseException {
-        Reader reader=new FileReader(cnt.GETOTP_REQUESTBODY);
-        prop.load(Files.newInputStream(Paths.get("/Users/Jayabrata/IdeaProjects/Axis_Bank_Api_Frmwrk/src/main/resources/API_URL.properties")));
+        Reader reader=new FileReader(System.getProperty("user.dir")+cnt.GETOTP_REQUESTBODY);
+        System.out.println(System.getProperty("user.dir"));
+        prop.load(Files.newInputStream(Paths.get(System.getProperty("user.dir")+"/src/main/resources/API_URL.properties")));
         JSONObject jsonObject=(JSONObject)parser.parse(reader);
         RestAssured.baseURI=prop.getProperty("getOtpReq")+mobileNO;
         RequestSpecification requestSpecification=RestAssured.given().accept(ContentType.JSON).contentType(ContentType.JSON);
